@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:web_proyect/views/sidebar_screens/widgets/table_widget.dart';
 
-class VendorsScreen extends StatelessWidget {
+class VendorsScreen extends StatefulWidget {
   VendorsScreen({super.key});
 
   static const String id = "\VendorsScreen";
-  int length = 2;
 
+  @override
+  State<VendorsScreen> createState() => _VendorsScreenState();
+}
+
+class _VendorsScreenState extends State<VendorsScreen> {
+  int length = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -26,108 +32,7 @@ class VendorsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Table(
-                border: TableBorder.all(color: Colors.black12),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(color: Colors.lightBlueAccent),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("LOGO"),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("BUSINESS NAME"),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("CITY"),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("STATE"),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("ACTIVE"),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text("VIEW MORE"),
-                        ),
-                      ),
-                    ],
-                  ),
-                  ...List.generate(
-                      length,
-                      (index) => const TableRow(
-                        children:[
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("LOGO"),
-                            ),
-                          ),
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("BUSINESS NAME"),
-                            ),
-                          ),
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("CITY"),
-                            ),
-                          ),
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("STATE"),
-                            ),
-                          ),
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("ACTIVE"),
-                            ),
-                          ),
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text("VIEW MORE"),
-                            ),
-                          ),
-                        ],
-                      )
-                  ),
-                ],
-              )
+              TableWidget(),
             ],
           ),
         ),
